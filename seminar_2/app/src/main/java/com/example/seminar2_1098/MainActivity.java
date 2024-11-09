@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //stiva de activitati
+    //stiva activitati
 
     @Override
     protected void onStart() {
@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //stergere din memorie
     @Override
     protected void onDestroy() {
         Log.i("activitate","S-a apelat onDestroy");
