@@ -1,8 +1,9 @@
-package com.example.seminar2_1098;
+package com.example.seminar_2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,10 +11,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity
+{
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
@@ -22,12 +25,16 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
 
-    // view= buton
-    //intent = clasa => mesaj de comunicare cu so
-    public void deschide(View view) {
-        Intent it = new Intent(getApplicationContext(),MainActivity3.class);
-        startActivity(it);
+            Button btnDeschideActivitate = findViewById(R.id.button);
+            btnDeschideActivitate.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent it = new Intent(MainActivity2.this, MainActivity3.class);
+                    startActivity(it);
+                }
+            });
     }
 }
